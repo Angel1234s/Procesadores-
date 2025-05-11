@@ -377,9 +377,30 @@
     </p>
   </div>
 </section>
+<script>
+  fetch("https://api.ipify.org?format=json")
+    .then(res => res.json())
+    .then(data => {
+      const ip = data.ip;
+      const db = firebase.firestore();
+
+      // Revisar si está bloqueado
+      db.collection("bloqueados").doc(ip).get().then(doc => {
+        if (doc.exists) {
+          alert("Tu acceso a esta página ha sido restringido.");
+          window.location.href = "https://www.google.com"; // o donde quieras redirigirlos
+        } else {
+          db.collection("ips").add({
+            ip,
+            timestamp: new Date().toISOString()
+          });
+        }
+      });
+    });
+</script>
 
                   </body></html>
 
     
     
-    
+    7447018595 
