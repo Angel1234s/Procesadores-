@@ -297,6 +297,8 @@
                     <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="footer"><div class="u-clearfix u-sheet u-sheet-1">
                     
                     </div></footer>
+
+                    
                   
                       
                   </section>
@@ -399,8 +401,27 @@
     });
 </script>
 
+
                   </body></html>
+
+                  <script>db.collection("comentario").orderBy("timestamp", "desc").onSnapshot((snapshot) => {
+  const contenedor = document.getElementById("comentarios");
+  contenedor.innerHTML = "";
+  snapshot.forEach((doc) => {
+    const data = doc.data();
+    const fecha = data.timestamp.toDate();  // ✅ ESTO es lo que lo arregla
+    const formateada = fecha.toLocaleString();
+    contenedor.innerHTML += `
+      <tr>
+        <td>${data.nombre}</td>
+        <td>${data.comentario}</td>
+        <td>${formateada}</td>
+        <td>${data.ip || "Desconocida"}</td>
+      </tr>`;
+  });
+});
+</script>
 
     
     
-    7447018595 
+     
