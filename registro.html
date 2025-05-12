@@ -102,43 +102,52 @@
   </style>
 </head>
 <body>
-  <canvas id="matrix"></canvas>
-  <audio autoplay loop>
-    <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
-  </audio>
-  <audio id="boom-sound">
-    <source src="https://www.soundjay.com/button/beep-07.wav" type="audio/wav">
-  </audio>
+  <div id="login-panel" style="text-align: center; margin-top: 100px;">
+    <h2>🔐 Acceso restringido</h2>
+    <input type="text" id="usuario" placeholder="Usuario..." style="padding: 10px; font-size: 1em;">
+    <button onclick="verificarUsuario()" style="padding: 10px; font-size: 1em;">Entrar</button>
+    <p id="error-msg" style="color: red; display: none;">Usuario incorrecto</p>
+  </div>
 
-  <pre class="ascii">
-       .--.
-    .-(    ).
-   (___.__)__) 
-      ___    ___    ___
-     (o o)  (o o)  (o o)
-  ooO--(_)--(_)--(_)--Ooo-
-     MUNDO EN VERDE
-  </pre>
+  <div class="contenido-protegido">
+    <canvas id="matrix"></canvas>
+    <audio autoplay loop>
+      <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
+    </audio>
+    <audio id="boom-sound">
+      <source src="https://www.soundjay.com/button/beep-07.wav" type="audio/wav">
+    </audio>
 
-  <h1>Panel de Comentarios</h1>
+    <pre class="ascii">
+         .--.
+      .-(    ).
+     (___.__)__) 
+        ___    ___    ___
+       (o o)  (o o)  (o o)
+    ooO--(_)--(_)--(_)--Ooo-
+       MUNDO EN VERDE
+    </pre>
 
-  <div id="visitas">Visitas: cargando...</div>
+    <h1>Panel de Comentarios</h1>
 
-  <button id="autodestruccion" onclick="iniciarAutodestruccion()">🧨 Activar Autodestrucción</button>
-  <button id="chat-panel-btn" onclick="window.location.href='file:///C:/Users/acant/Desktop/mencho/Untitled-1.html'">💬 Panel del Chat</button>
-  <div id="contador"></div>
+    <div id="visitas">Visitas: cargando...</div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Comentario</th>
-        <th>Fecha y Hora</th>
-        <th>IP</th>
-      </tr>
-    </thead>
-    <tbody id="comentarios"></tbody>
-  </table>
+    <button id="autodestruccion" onclick="iniciarAutodestruccion()">🧨 Activar Autodestrucción</button>
+    <button id="chat-panel-btn" onclick="window.location.href='file:///C:/Users/acant/Desktop/mencho/Untitled-1.html'">💬 Panel del Chat</button>
+    <div id="contador"></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Comentario</th>
+          <th>Fecha y Hora</th>
+          <th>IP</th>
+        </tr>
+      </thead>
+      <tbody id="comentarios"></tbody>
+    </table>
+  </div>
 
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
@@ -170,7 +179,6 @@
       });
     });
 
-    // Contador de visitas
     const visitasRef = db.collection("visitas").doc("contador");
     visitasRef.get().then(doc => {
       if (doc.exists) {
@@ -183,7 +191,6 @@
       document.getElementById("visitas").innerText = `Visitas: ${doc.data().total}`;
     });
 
-    // Matrix background effect
     const canvas = document.getElementById("matrix");
     const ctx = canvas.getContext("2d");
     canvas.height = window.innerHeight;
@@ -203,7 +210,6 @@
     };
     setInterval(draw, 50);
 
-    // Autodestrucción
     function iniciarAutodestruccion() {
       const boton = document.getElementById("autodestruccion");
       const contador = document.getElementById("contador");
@@ -226,6 +232,22 @@
         }
       }, 1000);
     }
+
+    // Login simple con usuario
+    const usuarioPermitido = "admin";
+    function verificarUsuario() {
+      const usuarioIngresado = document.getElementById("usuario").value.trim();
+      if (usuarioIngresado === usuarioPermitido) {
+        document.getElementById("login-panel").style.display = "none";
+        document.body.querySelectorAll(".contenido-protegido").forEach(e => e.style.display = "block");
+      } else {
+        document.getElementById("error-msg").style.display = "block";
+      }
+    }
+
+    window.onload = () => {
+      document.body.querySelectorAll(".contenido-protegido").forEach(e => e.style.display = "none");
+    };
   </script>
 </body>
 </html>
