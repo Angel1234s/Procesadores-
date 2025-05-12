@@ -1,253 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panel de Comentarios</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel de Control - IPs</title>
   <style>
     body {
-      font-family: 'Courier New', monospace;
-      background-color: #0f0f0f;
-      color: #00ff00;
+      font-family: Arial, sans-serif;
       padding: 20px;
-      overflow-x: hidden;
-      position: relative;
+      background: #f2f2f2;
     }
-    h1 {
-      color: #00ff00;
-      text-shadow: 0 0 5px #0f0;
-      animation: blink 1s infinite alternate;
+    h1 { color: #333; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
+    button {
+      border: none; padding: 5px 10px; cursor: pointer; margin-right: 5px;
     }
-    @keyframes blink {
-      0% { opacity: 1; }
-      100% { opacity: 0.6; }
-    }
-    pre.ascii {
-      color: #00ff00;
-      font-size: 12px;
-      white-space: pre;
-      line-height: 1;
-      text-align: center;
+    .bloquear { background: red; color: white; }
+    .desbloquear { background: green; color: white; }
+    .navegar {
       margin-bottom: 20px;
-      animation: typewriter 3s steps(80) 1s 1 normal both;
-      overflow: hidden;
-      border-right: 2px solid #00ff00;
-      width: 0;
-    }
-    @keyframes typewriter {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: #1a1a1a;
-      box-shadow: 0 0 10px #00ff00;
-    }
-    th, td {
-      padding: 10px;
-      border: 1px solid #00ff00;
-      text-align: left;
-    }
-    th {
-      background-color: #111;
-    }
-    tr:hover {
-      background-color: #003300;
-    }
-    canvas#matrix {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100vw;
-      height: 100vh;
-    }
-    #autodestruccion, #chat-panel-btn {
-      margin-top: 20px;
       padding: 10px 20px;
-      background: #000;
-      color: #0f0;
-      border: 1px solid #0f0;
+      background: black;
+      color: lime;
+      border: 1px solid lime;
       font-weight: bold;
       cursor: pointer;
-      margin-right: 10px;
     }
-    #contador {
-      margin-top: 10px;
-      font-size: 1.5em;
-      display: none;
+    #login {
+      background: white;
+      padding: 30px;
+      max-width: 400px;
+      margin: 100px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      text-align: center;
     }
-    #visitas {
-      margin-top: 10px;
-      font-size: 1.2em;
-      color: #00ff00;
-    }
-    .explosion {
-      animation: shake 0.5s infinite;
-    }
-    @keyframes shake {
-      0% { transform: translate(1px, 1px) rotate(0deg); }
-      10% { transform: translate(-1px, -2px) rotate(-1deg); }
-      20% { transform: translate(-3px, 0px) rotate(1deg); }
-      30% { transform: translate(3px, 2px) rotate(0deg); }
-      40% { transform: translate(1px, -1px) rotate(1deg); }
-      50% { transform: translate(-1px, 2px) rotate(-1deg); }
-      60% { transform: translate(-3px, 1px) rotate(0deg); }
-      70% { transform: translate(3px, 1px) rotate(-1deg); }
-      80% { transform: translate(-1px, -1px) rotate(1deg); }
-      90% { transform: translate(1px, 2px) rotate(0deg); }
-      100% { transform: translate(1px, -2px) rotate(-1deg); }
-    }
+    #contenido { display: none; }
   </style>
 </head>
 <body>
-  <div id="login-panel" style="text-align: center; margin-top: 100px;">
-    <h2>🔐 Acceso restringido</h2>
-    <input type="text" id="usuario" placeholder="Usuario..." style="padding: 10px; font-size: 1em;">
-    <button onclick="verificarUsuario()" style="padding: 10px; font-size: 1em;">Entrar</button>
-    <p id="error-msg" style="color: red; display: none;">Usuario incorrecto</p>
-  </div>
 
-  <div class="contenido-protegido">
-    <canvas id="matrix"></canvas>
-    <audio autoplay loop>
-      <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
-    </audio>
-    <audio id="boom-sound">
-      <source src="https://www.soundjay.com/button/beep-07.wav" type="audio/wav">
-    </audio>
+<div id="login">
+  <h2>Iniciar sesión</h2>
+  <input type="text" id="usuario" placeholder="Usuario"/><br/><br/>
+  <input type="password" id="contrasena" placeholder="Contraseña"/><br/><br/>
+  <button onclick="verificarAcceso()">Entrar</button>
+  <p id="error" style="color:red;"></p>
+</div>
 
-    <pre class="ascii">
-         .--.
-      .-(    ).
-     (___.__)__) 
-        ___    ___    ___
-       (o o)  (o o)  (o o)
-    ooO--(_)--(_)--(_)--Ooo-
-       MUNDO EN VERDE
-    </pre>
+<div id="contenido">
+  <button class="navegar" onclick="window.location.href='https://angel1234s.github.io/Procesadores-/Untitled-1.html'">
+    💬 Ir al Panel de Comentarios
+  </button>
 
-    <h1>Panel de Comentarios</h1>
+  <h1>Panel de Control: IPs registradas</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>IP</th>
+        <th>Fecha y Hora</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="tabla-ips"></tbody>
+  </table>
+</div>
 
-    <div id="visitas">Visitas: cargando...</div>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+<script>
+  function verificarAcceso() {
+    const usuario = document.getElementById("usuario").value;
+    const contrasena = document.getElementById("contrasena").value;
+    if (usuario === "angel" && contrasena === "nomeselacontraseña") {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("contenido").style.display = "block";
+    } else {
+      document.getElementById("error").innerText = "Credenciales incorrectas";
+    }
+  }
 
-    <button id="autodestruccion" onclick="iniciarAutodestruccion()">🧨 Activar Autodestrucción</button>
-    <button id="chat-panel-btn" onclick="window.location.href='file:///C:/Users/acant/Desktop/mencho/Untitled-1.html'">💬 Panel del Chat</button>
-    <div id="contador"></div>
+  const firebaseConfig = {
+    apiKey: "AIzaSyD4bOxdwvoN1h1vXbRIK9s-1icJsybCh3o",
+    authDomain: "procesadores-1447f.firebaseapp.com",
+    projectId: "procesadores-1447f"
+  };
 
-    <table>
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Comentario</th>
-          <th>Fecha y Hora</th>
-          <th>IP</th>
-        </tr>
-      </thead>
-      <tbody id="comentarios"></tbody>
-    </table>
-  </div>
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
 
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
-
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyD4bOxdwvoN1h1vXbRIK9s-1icJsybCh3o",
-      authDomain: "procesadores-1447f.firebaseapp.com",
-      projectId: "procesadores-1447f"
-    };
-
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-
-    db.collection("comentario").orderBy("timestamp", "desc").onSnapshot(snapshot => {
-      const tabla = document.getElementById("comentarios");
+  function cargarIPs() {
+    db.collection("ips").orderBy("timestamp", "desc").onSnapshot(snapshot => {
+      const tabla = document.getElementById("tabla-ips");
       tabla.innerHTML = "";
       snapshot.forEach(doc => {
         const data = doc.data();
-        const fecha = data.timestamp?.toDate ? data.timestamp.toDate() : new Date();
-        const fila = document.createElement("tr");
-        fila.innerHTML = `
-          <td>${data.nombre || "Sin nombre"}</td>
-          <td>${data.comentario || "Sin comentario"}</td>
-          <td>${fecha.toLocaleString()}</td>
-          <td>${data.ip || "Sin IP"}</td>
-        `;
-        tabla.appendChild(fila);
+        const ip = data.ip;
+
+        db.collection("bloqueados").doc(ip).get().then(bloqDoc => {
+          const estaBloqueado = bloqDoc.exists;
+          const fila = document.createElement("tr");
+          fila.innerHTML = `
+            <td>${ip}</td>
+            <td>${new Date(data.timestamp).toLocaleString()}</td>
+            <td>
+              <button class="bloquear" onclick="bloquearIP('${ip}')">Bloquear</button>
+              <button class="desbloquear" onclick="desbloquearIP('${ip}')" ${!estaBloqueado ? 'disabled' : ''}>Desbloquear</button>
+            </td>
+          `;
+          tabla.appendChild(fila);
+        });
       });
     });
+  }
 
-    const visitasRef = db.collection("visitas").doc("contador");
-    visitasRef.get().then(doc => {
-      if (doc.exists) {
-        visitasRef.update({ total: (doc.data().total || 0) + 1 });
-      } else {
-        visitasRef.set({ total: 1 });
-      }
-    });
-    visitasRef.onSnapshot(doc => {
-      document.getElementById("visitas").innerText = `Visitas: ${doc.data().total}`;
-    });
+  function bloquearIP(ip) {
+    db.collection("bloqueados").doc(ip).set({ bloqueado: true });
+    alert(`IP ${ip} bloqueada`);
+  }
 
-    const canvas = document.getElementById("matrix");
-    const ctx = canvas.getContext("2d");
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
+  function desbloquearIP(ip) {
+    db.collection("bloqueados").doc(ip).delete();
+    alert(`IP ${ip} desbloqueada`);
+  }
 
-    const letters = Array(256).join("1").split("");
-    const draw = () => {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#0F0";
-      letters.map((y_pos, index) => {
-        const text = String.fromCharCode(3e4 + Math.random() * 33);
-        const x_pos = index * 10;
-        ctx.fillText(text, x_pos, y_pos);
-        letters[index] = y_pos > 758 + Math.random() * 1e4 ? 0 : y_pos + 10;
-      });
-    };
-    setInterval(draw, 50);
-
-    function iniciarAutodestruccion() {
-      const boton = document.getElementById("autodestruccion");
-      const contador = document.getElementById("contador");
-      const boomSound = document.getElementById("boom-sound");
-      boton.disabled = true;
-      contador.style.display = 'block';
-      document.body.classList.add("explosion");
-
-      let tiempo = 10;
-      contador.innerText = `⚠️ Autodestrucción en ${tiempo} segundos...`;
-
-      const intervalo = setInterval(() => {
-        tiempo--;
-        contador.innerText = `⚠️ Autodestrucción en ${tiempo} segundos...`;
-        if (tiempo <= 0) {
-          clearInterval(intervalo);
-          contador.innerText = "💥 BOOM: Panel eliminado";
-          boomSound.play();
-          setTimeout(() => window.close(), 1500);
-        }
-      }, 1000);
-    }
-
-    // Login simple con usuario
-    const usuarioPermitido = "admin";
-    function verificarUsuario() {
-      const usuarioIngresado = document.getElementById("usuario").value.trim();
-      if (usuarioIngresado === usuarioPermitido) {
-        document.getElementById("login-panel").style.display = "none";
-        document.body.querySelectorAll(".contenido-protegido").forEach(e => e.style.display = "block");
-      } else {
-        document.getElementById("error-msg").style.display = "block";
-      }
-    }
-
-    window.onload = () => {
-      document.body.querySelectorAll(".contenido-protegido").forEach(e => e.style.display = "none");
-    };
-  </script>
+  cargarIPs();
+</script>
 </body>
 </html>
