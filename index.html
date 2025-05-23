@@ -1,379 +1,432 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Página Principal</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      min-height: 100vh;
-      margin: 0;
-      overflow-x: hidden;
-      background: #050505;
-      position: relative;
-    }
+<html style="font-size: 16px;" lang="es"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="HP acaba de presentar su próxima computadora portátil, Creatividad sin compromiso, ¡La innovación ocurre mejor cuando estamos todos adentro!, HP Elite x2 1013 G3, Una computadora portátil para cada estilo de vida">
+    <meta name="description" content="">
+    <title>Casa</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="index.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 7.7.3, nicepage.com">
+    <meta name="referrer" content="origin">
+    
+    
+    
+    
+    
+    
+    
+    
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=ADLaM+Display:400">
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#dacf50">
+    <meta property="og:title" content="Casa">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-home-page="Casa.html" data-home-page-title="Casa" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="es"><header class="u-clearfix u-header u-header" id="header"><div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-hamburger-link u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-nav-container">
+            <button type="button" onclick="window.location.href='https://angel1234s.github.io/pag2/'">
+  Más información
+</button>
 
-    #fireworks-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      pointer-events: none;
-      background: transparent;
-    }
-
-    header {
-      margin-top: 20px;
-    }
-
-    h1 {
-      font-size: 6em;
-      margin-top: 100px;
-      margin-bottom: 60px;
-      color: #ff5e62;
-      text-shadow: 0 8px 32px #fff176, 0 0 48px #fff, 0 0 16px #ff80ab;
-      font-weight: bold;
-      letter-spacing: 4px;
-      text-align: center;
-      width: 100vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .info-row {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 10;
-      padding: 24px 0 18px 0;
-      background: rgba(10,10,10,0.55);
-      flex-wrap: wrap;
-      max-width: 100vw;
-    }
-
-    .info-container {
-      flex: 1 1 260px;
-      max-width: 300px;
-      min-width: 220px;
-      margin: 0 8px;
-      text-align: center;
-      background: linear-gradient(135deg, #ffe066 0%, #ff6f91 100%);
-      border-radius: 16px;
-      padding: 24px 18px 18px 18px;
-      color: #222;
-      box-shadow: 0 2px 16px #ffb34799;
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: 2px solid #fff59d;
-    }
-    .info-container:hover {
-      transform: translateY(-6px) scale(1.04);
-      box-shadow: 0 8px 24px #ffb347cc, 0 0 24px #fff17699;
-    }
-    .info-container h2 {
-      margin-bottom: 14px;
-      color: #d72660;
-      font-size: 1.4em;
-      letter-spacing: 1px;
-    }
-    .info-container ul {
-      text-align: left;
-      display: inline-block;
-      font-size: 1.08em;
-      margin-bottom: 0;
-    }
-    .acceso-btn {
-      display: inline-block;
-      padding: 10px 24px;
-      margin: 12px 0 0 0;
-      background-color: #007BFF;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 1.08em;
-      font-weight: 500;
-      transition: background-color 0.3s, transform 0.2s;
-      box-shadow: 0 2px 8px #b0c4de;
-    }
-    .acceso-btn:hover {
-      background-color: #0056b3;
-      transform: translateY(-2px) scale(1.04);
-    }
-    @media (max-width: 1200px) {
-      .info-row {
-        gap: 12px;
-      }
-      .info-container {
-        max-width: 260px;
-      }
-    }
-    @media (max-width: 900px) {
-      .info-row {
-        flex-wrap: wrap;
-        gap: 18px;
-      }
-      .info-container {
-        max-width: 320px;
-        min-width: 180px;
-      }
-    }
-    @media (max-width: 700px) {
-      .info-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-        position: static;
-        padding-bottom: 18px;
-      }
-      .info-container {
-        max-width: 98%;
-        min-width: 0;
-        margin-bottom: 18px;
-      }
-    }
-
-    /* Estilos para el contador de visitas */
-    #contador-visitas {
-      position: fixed;
-      top: 18px;
-      right: 28px;
-      background: #19179d;
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 20px;
-      font-weight: bold;
-      font-size: 1.1em;
-      box-shadow: 0 2px 8px #0008;
-      z-index: 9999;
-    }
-  </style>
-</head>
-<body>
-
-  <canvas id="fireworks-bg"></canvas>
-
-  <header>
-    <h1>
-      Bienvenido
-    </h1>
-  </header>
-
-  <div class="info-row">
-    <section class="info-container">
-      <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="Icono Juegos" style="width:70px;margin-bottom:10px;">
-      <h2>Juegos</h2>
-      <ul>
-        <li>Entretenimiento y diversión para todas las edades.</li>
-        <li>Variedad de juegos interactivos y educativos.</li>
-      </ul>
-      <a href="juegos de terror y aventura.html" class="acceso-btn">Ir a Juegos</a>
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="https://angel1234s.github.io/Procesadores-/registro.html" style="padding: 10px 20px;">Panel</a>
+<button onclick="window.location.href='https://angel1234s.github.io/Manuel/'">Regresar</button>
+</li></li></ul>
+          </div>
+          <div class="u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./">Casa</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Acerca-de.html"></a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contacto.html"></a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+        <img class="u-image u-image-default u-image-1" src="images/assets_task_01jta5pm3bfwsrqmddj8rhepgb_1746245839_img_0.webp" alt="" data-image-width="1024" data-image-height="1536">
+      </div></header> 
+    <section class="u-clearfix u-white u-section-1" id="sec-8d71">
+      <div class="u-clearfix u-sheet u-sheet-1" data-image-width="1600" data-image-height="703">
+        <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-left-cell u-similar-fill u-size-30 u-layout-cell-1">
+                <div class="u-container-layout u-valign-middle u-container-layout-1">
+                  <h1 class="u-text u-text-1">Procesadores<br>
+                  </h1>
+                  <div class="u-align-left u-border-1 u-border-grey-25 u-line u-line-horizontal u-line-1"></div>
+                  <p class="u-text u-text-2"> En esta página descubrirás todo lo que necesitas saber sobre procesadores, el cerebro detrás de cada computadora, smartphone y dispositivo inteligente. Desde los fundamentos de cómo funcionan hasta comparativas de rendimiento, análisis de arquitecturas y consejos para elegir el mejor procesador para tus necesidades. </p>
+                  <a href="#" class="u-border-0 u-link u-text-palette-1-base u-link-1">Mundo procesador, industrias ACG. </a>
+                </div>
+              </div>
+              <div class="u-align-right u-container-align-right u-container-style u-layout-cell u-right-cell u-similar-fill u-size-30 u-layout-cell-2">
+                <div class="u-container-layout u-valign-top u-container-layout-2">
+                  <img class="u-expanded-width u-image u-image-1" src="images/c28f0a8deb5feee767de800cd82e6737.jpeg">
+                  <p class="u-custom-font u-small-text u-text u-text-font u-text-variant u-text-3">Imagen de <a href="http://www8.hp.com/us/en/elite-family/elite-x2.html" target="_blank" style="">hp</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+    <section class="u-clearfix u-image u-shading u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-section-2" id="sec-c380">
+      <div class="u-expanded-height u-palette-4-dark-3 u-shape u-shape-rectangle u-shape-1"></div>
+      <div class="custom-expanded data-layout-selected u-clearfix u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-size-23 u-size-60-md">
+              <div class="u-layout-col">
+                <div class="u-container-style u-layout-cell u-left-cell u-similar-fill u-size-60 u-layout-cell-1">
+                  <div class="u-container-layout">
+                    <h2 class="u-text u-text-1">¿ Que encontraras en mundo procesador ? </h2>
+                    <div class="u-border-5 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div>
+                    <p class="u-text u-text-2">El dispositivo desmontable para empresas o hogares más pequeño del mundo le brinda una experiencia de tableta pura con el poder de manejar sus aplicaciones profesionales.</p>
+                    <img src="images/the-technician-laying-cpu-in-the-motherboard-socket.webp" alt="" class="u-image u-image-default u-image-1" data-image-width="612" data-image-height="407">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-size-37 u-size-60-md">
+              <div class="u-layout-col">
+                <div class="u-size-30">
+                  <div class="u-layout-row">
+                    <div class="u-container-style u-layout-cell u-opacity u-opacity-90 u-size-30 u-white u-layout-cell-2">
+                      <div class="u-container-layout u-valign-middle u-container-layout-2"><span class="u-icon u-icon-circle u-palette-1-base u-text-grey-10 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 490.1 490.1" style="undefined"><use xlink:href="#svg-f9e3"></use></svg><svg class="u-svg-content" viewBox="0 0 490.1 490.1" x="0px" y="0px" id="svg-f9e3" style="enable-background:new 0 0 490.1 490.1;"><g><g><path d="M473.15,376.625c22.6-22.6,22.6-59.3,0-81.8c-22.6-22.6-59.3-22.6-81.8,0l-30.7,30.7c-8.5,8.5-22.4,8.5-30.9,0l-54.8-54.9    c-3.4-3.4-8-5.3-12.7-5.3c-4.8,0-9.4,1.9-12.7,5.3c-15,15-34.9,23.3-56.2,23.3c-21.3,0-41.2-8.3-56.2-23.3l-49.6-49.6l112.3-112.3    l49.6,49.6c13.8,13.8,22,32.1,23.1,51.5c0.6,9.6,8.5,17,18,17c0.3,0,0.7,0,1.1,0c9.9-0.6,17.5-9.1,16.9-19    c-1.6-28.3-13.6-54.9-33.6-74.9l-49.6-49.6l5.5-5.5c7-7,7-18.4,0-25.5c-7-7-18.4-7-25.5,0l-35.3,35.3l-61.2-61.2    c-7-7-18.4-7-25.5,0c-7,7-7,18.4,0,25.5l61.2,61.2l-52.6,52.6l-61.2-61.2c-7-7-18.4-7-25.5,0c-7,7-7,18.4,0,25.5l61.3,61.2    l-35.3,35.3c-7,7-7,18.4,0,25.5c3.5,3.5,8.1,5.3,12.7,5.3c4.6,0,9.2-1.8,12.7-5.3l5.5-5.5l49.6,49.6    c21.8,21.8,50.8,33.8,81.6,33.8c24.7,0,48.3-7.7,67.9-22.1l43.1,43.1c11.3,11.3,26.1,16.9,40.9,16.9s29.6-5.6,40.9-16.9l30.7-30.7    c8.5-8.5,22.4-8.5,30.9,0s8.5,22.4,0,30.9l-30.7,30.7c-10.9,10.9-16.9,25.4-16.9,40.9s6,30,16.9,40.9c3.5,3.5,8.1,5.3,12.7,5.3    c4.6,0,9.2-1.8,12.7-5.3c7-7,7-18.4,0-25.5c-4.1-4.1-6.4-9.6-6.4-15.4s2.3-11.3,6.4-15.4L473.15,376.625z"></path>
+</g>
+</g></svg></span>
+                        <h5 class="u-align-center u-custom-font u-heading-font u-text u-text-3">¿Que es un procesador? </h5>
+                        <p class="u-align-center u-text u-text-4">Una explicación sencilla pero completa sobre qué es un CPU, cómo funciona y por qué es tan importante en un sistema. </p>
+                        <button onclick="window.location.href='https://angel1234s.github.io/pag2/#procesadores-info'">
+  Más información
+</button>
 
-    <section class="info-container">
-      <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Icono Música" style="width:70px;margin-bottom:10px;">
-      <h2>Música</h2>
-      <ul>
-        <li>Explora y disfruta de diferentes géneros musicales.</li>
-        <li>Listas de reproducción y recomendaciones.</li>
-      </ul>
-      <a href="MUSICA.HTML" class="acceso-btn">Ir a Música</a>
-    </section>
+                        
+                      </div>
+                    </div>
+                    <div class="u-container-style u-layout-cell u-opacity u-opacity-90 u-right-cell u-similar-fill u-size-30 u-white u-layout-cell-3">
+                      <div class="u-container-layout u-valign-middle u-container-layout-3"><span class="u-icon u-icon-circle u-palette-1-base u-text-grey-10 u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style="undefined"><use xlink:href="#svg-bd32"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px" id="svg-bd32"><g><path d="M501,379V133c0-14.7-12.7-26.7-28.3-26.7H39.3c-15.6,0-28.3,12-28.3,26.7v246c0,14.7,12.7,26.7,28.3,26.7h433.4   C488.3,405.7,501,393.8,501,379z M35.5,379V133c0-0.9,1.5-2.2,3.8-2.2h433.4c2.4,0,3.8,1.4,3.8,2.2v246c0,0.9-1.5,2.2-3.8,2.2H39.3   C37,381.2,35.5,379.9,35.5,379z"></path><circle cx="99.3" cy="191.1" r="15.3"></circle><circle cx="162" cy="191.1" r="15.3"></circle><circle cx="224.6" cy="191.1" r="15.3"></circle><circle cx="287.3" cy="191.1" r="15.3"></circle><circle cx="350" cy="191.1" r="15.3"></circle><circle cx="412.7" cy="191.1" r="15.3"></circle><circle cx="130.7" cy="256" r="15.3"></circle><circle cx="193.3" cy="256" r="15.3"></circle><circle cx="256" cy="256" r="15.3"></circle><circle cx="318.6" cy="256" r="15.3"></circle><path d="M381.3,240.7L381.3,240.7c-8.5,0-15.3,6.9-15.3,15.3c0,8.5,6.9,15.3,15.3,15.3l0,0c8.5,0,15.3-6.9,15.3-15.3   C396.6,247.5,389.8,240.7,381.3,240.7z"></path><path d="M365.3,308.7H146.7c-6.8,0-12.3,5.5-12.3,12.3s5.5,12.3,12.3,12.3h218.6c6.8,0,12.3-5.5,12.3-12.3S372.1,308.7,365.3,308.7   z"></path>
+</g></svg></span>
+                        <h5 class="u-align-center u-custom-font u-heading-font u-text u-text-5">Tipos de procesadores </h5>
+                        <p class="u-align-center u-text u-text-6">Conoce las diferencias entre procesadores Intel, AMD, ARM y otros. Descubre para qué sirve cada uno y en qué se destacan. </p>
+                        <button style="margin-top: 50px;" onclick="window.location.href='https://angel1234s.github.io/pag2/#procesadores'">
+  Más información
+</button>
 
-    <section class="info-container">
-      <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Icono Sol" style="width:70px;margin-bottom:10px;">
-      <h2>Sistema Solar</h2>
-      <ul>
-        <li>Aprende sobre los planetas y el espacio.</li>
-        <li>Información detallada y curiosidades astronómicas.</li>
-      </ul>
-      <a href="sistema solar.html" class="acceso-btn">Ir al Sistema Solar</a>
-    </section>
 
-    <section class="info-container">
-      <img src="https://cdn-icons-png.flaticon.com/512/2721/2721296.png" alt="Icono Procesadores" style="width:70px;margin-bottom:10px;">
-      <h2>Procesadores</h2>
-      <ul>
-        <li>Información sobre tecnología y computadoras.</li>
-        <li>Comparativas y novedades en hardware.</li>
-      </ul>
-      <a href="https://angel1234s.github.io/Procesadores-/" class="acceso-btn">Ir a Procesadores</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="u-size-30">
+                  <div class="u-layout-row">
+                    <div class="u-container-style u-layout-cell u-opacity u-opacity-90 u-similar-fill u-size-30 u-white u-layout-cell-4">
+                      <div class="u-container-layout u-valign-middle u-container-layout-4"><span class="u-icon u-icon-circle u-palette-1-base u-text-grey-10 u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 511.999 511.999" style="undefined"><use xlink:href="#svg-9171"></use></svg><svg class="u-svg-content" viewBox="0 0 511.999 511.999" x="0px" y="0px" id="svg-9171" style="enable-background:new 0 0 511.999 511.999;"><g><g><path d="M422.846,132.411H89.154c-6.085,0-11.019,4.933-11.019,11.019v166.424c0,6.086,4.934,11.019,11.019,11.019    s11.019-4.933,11.019-11.019V154.448h311.654v155.405h0c0,6.086,4.934,11.019,11.019,11.019s11.019-4.933,11.019-11.019V143.429    C433.864,137.344,428.93,132.411,422.846,132.411z"></path>
+</g>
+</g><g><g><path d="M502.083,349.202h-20.295V117.797c0-18.366-14.942-33.308-33.308-33.308H63.52c-18.367,0-33.308,14.942-33.308,33.308    v231.405H9.917c-5.477,0-9.917,4.439-9.917,9.917v19.468c0,26.977,21.947,48.924,48.924,48.924h414.151    c26.977,0,48.924-21.947,48.924-48.924v-19.468C512,353.641,507.561,349.202,502.083,349.202z M52.249,117.797    c0-6.214,5.057-11.271,11.271-11.271h384.958c6.216,0,11.271,5.056,11.271,11.271v231.405H310.549    c-0.703-0.023-1.428,0.037-2.148,0.176c-4.668,0.898-8.041,4.984-8.041,9.737c0,8.371-6.81,15.18-15.179,15.18h-58.361    c-8.371,0-15.179-6.81-15.179-15.18c0-5.553-4.601-10.034-10.147-9.915H52.249V117.797z M492.166,378.587L492.166,378.587    c0,16.041-13.051,29.09-29.09,29.09H48.924c-16.04,0-29.09-13.049-29.09-29.09v-9.551h173.403    c4.287,14.491,17.72,25.094,33.582,25.094h58.361c15.862,0,29.295-10.604,33.583-25.094h173.404V378.587z"></path>
+</g>
+</g><g><g><path d="M272.331,196.459c-4.304-4.303-11.279-4.303-15.584,0l-69.297,69.3c-4.303,4.303-4.303,11.28,0,15.583    c2.152,2.152,4.972,3.227,7.791,3.227c2.82,0,5.639-1.077,7.791-3.227l69.299-69.299    C276.634,207.74,276.634,200.763,272.331,196.459z"></path>
+</g>
+</g><g><g><path d="M313.405,236.619c-4.304-4.303-11.279-4.303-15.583,0l-27.606,27.606c-4.303,4.303-4.303,11.28,0,15.584    c2.152,2.152,4.972,3.227,7.791,3.227c2.821,0,5.639-1.075,7.791-3.227l27.606-27.606    C317.708,247.9,317.708,240.923,313.405,236.619z"></path>
+</g>
+</g></svg></span>
+                        <h5 class="u-align-center u-custom-font u-heading-font u-text u-text-7">&nbsp;Comparativas y benchmarks </h5>
+                        <p class="u-align-center u-text u-text-8">Te mostramos comparaciones reales de rendimiento entre distintos modelos y marcas, para que tomes decisiones informadas antes de comprar. </p>
+                          <button onclick="window.location.href='https://angel1234s.github.io/pag2/#comparativa'">
+  Más información
+</button>
+
+                      </div>
+                    </div>
+                    <div class="u-container-style u-layout-cell u-opacity u-opacity-90 u-right-cell u-similar-fill u-size-30 u-white u-layout-cell-5">
+                      <div class="u-container-layout u-valign-middle u-container-layout-5"><span class="u-icon u-icon-circle u-palette-1-base u-text-grey-10 u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 477.867 477.867" style="undefined"><use xlink:href="#svg-850e"></use></svg><svg class="u-svg-content" viewBox="0 0 477.867 477.867" x="0px" y="0px" id="svg-850e" style="enable-background:new 0 0 477.867 477.867;"><g><g><path d="M460.8,153.6h-51.2v-34.133c0-9.426-7.641-17.067-17.067-17.067H17.067C7.641,102.4,0,110.041,0,119.467V358.4    c0,9.426,7.641,17.067,17.067,17.067h375.467c9.426,0,17.067-7.641,17.067-17.067v-51.2h51.2c9.426,0,17.067-7.641,17.067-17.067    V170.667C477.867,161.241,470.226,153.6,460.8,153.6z M375.467,341.333H34.133v-204.8h341.333V341.333z M443.733,273.067H409.6    v-85.333h34.133V273.067z"></path>
+</g>
+</g><g><g><path d="M68.267,170.667c-9.426,0-17.067,7.641-17.067,17.067v102.4c0,9.426,7.641,17.067,17.067,17.067    s17.067-7.641,17.067-17.067v-102.4C85.333,178.308,77.692,170.667,68.267,170.667z"></path>
+</g>
+</g></svg></span>
+                        <h5 class="u-align-center u-custom-font u-heading-font u-text u-text-9">Tecnologia y ​arquitectura</h5>
+                         
+                        <p class="u-align-center u-text u-text-10">Explicaciones sobre núcleos, hilos, nanómetros, cachés y más. Todo explicado con ejemplos y lenguaje accesible. </p>
+                         <button style="margin-top: 25px;" onclick="window.location.href='https://angel1234s.github.io/pag2/#tec'">
+  Más información
+</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+    <section class="u-clearfix u-white u-section-3" id="sec-b2d6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="custom-expanded u-align-left u-left-0 u-palette-1-base u-shape u-shape-1"></div>
+        <img src="images/img3.webp" class="u-align-left u-image u-image-1" data-image-width="612" data-image-height="350">
+        <div class="u-container-style u-group u-group-1">
+          <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs">
+            <h2 class="u-text u-text-1"> 🧠 Guía para Principiantes: ¿Qué es un Procesador? </h2>
+            <div class="u-border-5 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div>
+            <p class="u-text u-text-2">El procesador (también llamado CPU, por sus siglas en inglés Central Processing Unit) es el cerebro de cualquier dispositivo electrónico. Se encarga de ejecutar instrucciones y coordinar todas las operaciones del sistema. Sin él, una computadora no podría funcionar. </p>
+             <button  style="margin-left: 10%;" onclick="window.location.href='https://angel1234s.github.io/pag2/#guia'">
+  Más información
+</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-image u-shading u-section-4" data-image-width="1980" data-image-height="720" id="sec-28cc">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-26 u-layout-wrap u-layout-wrap-1">
+          <div class="u-gutter-0 u-layout">
+            <div class="u-layout-row">
+              <div class="u-size-30 u-size-60-md">
+                <div class="u-layout-col">
+                  <div class="u-container-style u-layout-cell u-left-cell u-similar-fill u-size-60 u-layout-cell-1">
+                    <div class="u-container-layout u-container-layout-1">
+                      <h2 class="u-text u-text-1"> 🔎 ¿Qué hace exactamente un procesador? </h2>
+                      <div class="u-border-5 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div>
+                      <p class="u-text u-text-2"> El procesador interpreta y ejecuta miles de instrucciones por segundo. Estas instrucciones pueden ir desde abrir una página web, escribir un documento, hasta correr un videojuego o editar un video. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-size-30 u-size-60-md">
+                <div class="u-layout-col">
+                  <div class="u-size-30">
+                    <div class="u-layout-row">
+                      <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-60 u-layout-cell-2">
+                        <div class="u-container-layout">
+                          <h1 class="u-custom-font u-text u-title u-text-3">Funciones básicas</h1>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-size-30">
+                    <div class="u-layout-row">
+                      <div class="u-align-left u-container-style u-layout-cell u-size-60 u-layout-cell-3">
+                        <div class="u-container-layout">
+                          <p class="u-text u-text-default u-text-4">Ejecutar programas y aplicaciones. </p>
+                          <p class="u-text u-text-default u-text-5">Coordinar la comunicación entre los distintos co​mponentes del sistema. </p>
+                          <p class="u-text u-text-default u-text-6">Procesar datos en tiempo real. </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-palette-4-light-3 u-section-5" id="sec-3331">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="data-layout-selected u-clearfix u-expanded-width-sm u-expanded-width-xl u-expanded-width-xs u-gutter-0 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-size-30 u-size-60-md">
+                <div class="u-layout-col">
+                  <div class="u-size-30">
+                    <div class="u-layout-row">
+                      <div class="u-align-left u-container-align-left u-container-style u-image u-layout-cell u-right-cell u-size-30 u-image-1">
+                        <div class="u-container-layout" src=""></div>
+                      </div>
+                      <div class="u-align-left u-container-align-left u-container-style u-image u-layout-cell u-size-30 u-image-2">
+                        <div class="u-container-layout" src="">
+                          <div class="u-align-center u-container-align-center u-container-style u-group u-palette-1-base u-group-1">
+                            <div class="u-container-layout u-valign-middle">
+                              <p class="u-text u-text-1">&nbsp;¿Por qué hay tantos tipos y marcas de procesadores? </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-size-30">
+                    <div class="u-layout-row">
+                      <div class="u-align-left u-container-align-left u-container-style u-hidden-sm u-hidden-xs u-image u-layout-cell u-right-cell u-size-30 u-image-3">
+                        <div class="u-container-layout" src=""></div>
+                      </div>
+                      <div class="u-align-left u-container-align-left u-container-style u-image u-layout-cell u-size-30 u-image-4">
+                        <div class="u-container-layout" src=""></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-size-30 u-size-60-md">
+                <div class="u-layout-row">
+                  <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-left-cell u-size-60 u-white u-layout-cell-5">
+                    <div class="u-container-layout u-container-layout-6" src="">
+                      <h2 class="u-text u-text-2">Las marcas más conocidas como Intel, AMD ofrecen procesadores para diferentes tipos de usuarios: </h2>
+                      <div class="u-border-5 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div>
+                      <p class="u-text u-text-3">Dé rienda suelta a su creatividad con una PC desmontable que ofrece un rendimiento completo de la PC y la libertad de una tableta pura.</p>
+                      <img class="custom-expanded u-image u-image-contain u-image-default u-image-5" src="images/image.png" alt="" data-image-width="959" data-image-height="214">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-image u-shading u-section-6" id="sec-8702">
+      <div class="u-expanded-height u-palette-4-dark-3 u-shape u-shape-rectangle u-shape-1"></div>
+      <div class="custom-expanded data-layout-selected u-clearfix u-layout-wrap u-layout-wrap-1">
+        <div class="u-gutter-0 u-layout">
+          <div class="u-layout-row">
+            <div class="u-container-style u-layout-cell u-left-cell u-similar-fill u-size-23 u-layout-cell-1">
+              <div class="u-container-layout u-container-layout-1">
+                <h2 class="u-text u-text-1"> "Velocidad, poder, precisión. Todo en un chip."</h2>
+                <div class="u-border-5 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div>
+                <p class="u-text u-text-2">Mundo Procesador </p>
+              </div>
+            </div>
+            <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-opacity u-opacity-90 u-right-cell u-similar-fill u-size-37 u-layout-cell-2">
+              <div class="u-container-layout u-container-layout-2">
+                <div class="u-form u-form-1">
+                  <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-block-5ab8-14 u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" source="email"><!-- hidden inputs for siteId and pageId -->
+                    <div class="u-form-group u-form-name">
+                      <input type="text" id="nombre" placeholder="Escribe tu nombre" class="u-input u-text-grey-90" style="margin-bottom: 10px; width: 100%;">                      
+
+                    <div class="u-form-group u-form-message">
+                      <textarea id="comentario" placeholder="Escribe tu comentario" class="u-input u-text-grey-90" rows="4" style="width: 100%; margin-bottom: 10px;"></textarea>
+                    </div>
+                    <div class="u-form-group u-form-submit">
+                      <button onclick="guardarComentario()" class="u-btn u-btn-submit u-button-style">Enviar</button>
+                      <input type="submit" value="submit" class="u-form-control-hidden">
+                    </div>
+                    <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="footer"><div class="u-clearfix u-sheet u-sheet-1">
+                    
+                    </div></footer>
+                  
+                      
+                  </section>
+                  
+                <!-- Documento original con el formulario reemplazado por integración con Firebase -->
+              <!-- Aquí solo está el bloque que reemplaza el formulario de correos -->
+              <!-- Agrega esto al final del <body> antes de </body> -->
+              
+              <!-- Firebase SDKs -->
+              <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+              <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+              
+              <section class="u-section u-comments u-section-custom" id="sec-comentarios">
+                <div class="u-sheet u-sheet-1">
+                  <div>
+                  </div>
+                  <h3 class="u-text u-text-default u-margin-top">Comentarios anteriores:</h3>
+                  <div id="comentarios"></div>
+                </div>
+              </section>
+              
+              <script>
+                const firebaseConfig = {
+                  apiKey: "AIzaSyD4bOxdwvoN1h1vXbRIK9s-1icJsybCh3o",
+                  authDomain: "procesadores-1447f.firebaseapp.com",
+                  projectId: "procesadores-1447f",
+                  storageBucket: "procesadores-1447f.appspot.com",
+                  messagingSenderId: "164517426981",
+                  appId: "1:164517426981:web:84a7f20e0cc3058e7bcccc",
+                  measurementId: "G-DMJH9PT9BN"
+                };
+              
+                firebase.initializeApp(firebaseConfig);
+                const db = firebase.firestore();
+              
+                function guardarComentario() {
+                  const nombre = document.getElementById("nombre").value.trim();
+                  const comentario = document.getElementById("comentario").value.trim();
+              
+                  if (nombre && comentario) {
+                    db.collection("comentario").add({ nombre, comentario }).then(() => {
+                      document.getElementById("nombre").value = "";
+                      document.getElementById("comentario").value = "";
+                    });
+                  }
+                }
+              
+                db.collection("comentario").onSnapshot((snapshot) => {
+                  const contenedor = document.getElementById("comentarios");
+                  contenedor.innerHTML = "";
+                  snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    contenedor.innerHTML += `<p><strong>${data.nombre}:</strong> ${data.comentario}</p>`;
+                  });
+                });
+              </script>
+              
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div></div>
+    <section class="u-section u-map u-section-custom" id="sec-ubicacion" style="margin-top: 40px;">
+  <div class="u-sheet u-sheet-1">
+    <h2 class="u-text u-text-default">Nos encontramos en el Plantel CONALEP Acapulco 1</h2>
+    <p class="u-text">Puedes visitarnos o ubicarnos fácilmente en Google Maps.</p>
+    <div style="width: 100%; height: 400px; margin-top: 20px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.256079316372!2d-99.92221982565788!3d16.863093019147664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c596bf17c6c48d%3A0x6db548b22944fa04!2sCONALEP%20Plantel%201%20Acapulco!5e0!3m2!1ses!2smx!4v1715200000000!5m2!1ses!2smx"
+        width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <p style="margin-top: 10px;">
+      <a href="https://goo.gl/maps/zZedddVSc2wXckvM9" target="_blank">Abrir en Google Maps</a>
+    </p>
   </div>
+</section>
+<script>
+  fetch("https://api.ipify.org?format=json")
+    .then(res => res.json())
+    .then(data => {
+      const ip = data.ip;
+      const db = firebase.firestore();
 
-  <script>
-    // Fuegos artificiales animados e interactivos (clic)
-    const canvas = document.getElementById('fireworks-bg');
-    const ctx = canvas.getContext('2d');
-    let W = window.innerWidth;
-    let H = window.innerHeight;
-    canvas.width = W;
-    canvas.height = H;
-
-    window.addEventListener('resize', () => {
-      W = window.innerWidth;
-      H = window.innerHeight;
-      canvas.width = W;
-      canvas.height = H;
-    });
-
-    function randomColor() {
-      const colors = [
-        '#ff5e62', '#ffecb3', '#ff80ab', '#82b1ff', '#00e676',
-        '#fff176', '#f06292', '#64b5f6', '#ffd54f', '#fff176', '#ffffff'
-      ];
-      return colors[Math.floor(Math.random() * colors.length)];
-    }
-
-    function Firework(x, y, custom) {
-      this.x = x !== undefined ? x : Math.random() * W;
-      this.y = y !== undefined ? y : H;
-      this.radius = 2 + Math.random() * 2;
-      this.color = randomColor();
-      this.speed = 2 + Math.random() * 3;
-      this.angle = -Math.PI / 2 + (Math.random() - 0.5) * 0.5;
-      this.exploded = false;
-      this.particles = [];
-      this.explodeHeight = custom ? y : (100 + Math.random() * (H * 0.5));
-
-      this.update = function() {
-        if (!this.exploded) {
-          this.x += Math.cos(this.angle) * this.speed;
-          this.y += Math.sin(this.angle) * this.speed;
-          if ((custom && this.y <= this.explodeHeight) || (!custom && this.y < this.explodeHeight)) {
-            this.exploded = true;
-            for (let i = 0; i < 30 + Math.random() * 30; i++) {
-              this.particles.push(new Particle(this.x, this.y, this.color));
-            }
-          }
+      // Revisar si está bloqueado
+      db.collection("bloqueados").doc(ip).get().then(doc => {
+        if (doc.exists) {
+          alert("Tu acceso a esta página ha sido restringido.");
+          window.location.href = "https://www.google.com"; // o donde quieras redirigirlos
         } else {
-          this.particles.forEach(p => p.update());
+          db.collection("ips").add({
+            ip,
+            timestamp: new Date().toISOString()
+          });
         }
-      };
-
-      this.draw = function() {
-        if (!this.exploded) {
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-          ctx.fillStyle = this.color;
-          ctx.shadowColor = this.color;
-          ctx.shadowBlur = 20;
-          ctx.fill();
-          ctx.shadowBlur = 0;
-        } else {
-          this.particles.forEach(p => p.draw());
-        }
-      };
-
-      this.isDone = function() {
-        return this.exploded && this.particles.every(p => p.alpha <= 0);
-      };
-    }
-
-    function Particle(x, y, color) {
-      this.x = x;
-      this.y = y;
-      this.radius = 1 + Math.random() * 2;
-      this.color = color;
-      this.angle = Math.random() * 2 * Math.PI;
-      this.speed = 1 + Math.random() * 4;
-      this.alpha = 1;
-
-      this.update = function() {
-        this.x += Math.cos(this.angle) * this.speed;
-        this.y += Math.sin(this.angle) * this.speed;
-        this.speed *= 0.97;
-        this.alpha -= 0.015;
-      };
-
-      this.draw = function() {
-        ctx.save();
-        ctx.globalAlpha = Math.max(this.alpha, 0);
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-        ctx.fillStyle = this.color;
-        ctx.shadowColor = this.color;
-        ctx.shadowBlur = 12;
-        ctx.fill();
-        ctx.restore();
-      };
-    }
-
-    let fireworks = [];
-
-    // En la función animate, aumenta la probabilidad de aparición:
-    function animate() {
-      ctx.clearRect(0, 0, W, H);
-      if (Math.random() < 0.13) { // Más fuegos artificiales por frame
-        fireworks.push(new Firework());
-      }
-      fireworks.forEach(fw => {
-        fw.update();
-        fw.draw();
       });
-      fireworks = fireworks.filter(fw => !fw.isDone());
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    // Interactividad: lanzar fuegos artificiales donde se haga clic
-    canvas.addEventListener('click', function(e) {
-      const rect = canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      fireworks.push(new Firework(x, y, true));
     });
+</script>
 
-    // Contador de visitas usando localStorage
-    let visitas = localStorage.getItem('sistema_solar_visitas');
-    if (!visitas) {
-        visitas = 1;
-    } else {
-        visitas = parseInt(visitas) + 1;
-    }
-    localStorage.setItem('sistema_solar_visitas', visitas);
 
-    // Crear y mostrar el contador en la parte superior derecha
-    window.addEventListener('DOMContentLoaded', function() {
-        const contador = document.createElement('div');
-        contador.id = "contador-visitas";
-        contador.textContent = `Visitas: ${visitas}`;
-        contador.style.position = "fixed";
-        contador.style.top = "18px";
-        contador.style.right = "28px";
-        contador.style.background = "#19179d";
-        contador.style.color = "#fff";
-        contador.style.padding = "10px 18px";
-        contador.style.borderRadius = "20px";
-        contador.style.fontWeight = "bold";
-        contador.style.fontSize = "1.1em";
-        contador.style.boxShadow = "0 2px 8px #0008";
-        contador.style.zIndex = "9999";
-        document.body.appendChild(contador);
-    });
+                  </body></html>
 
-    // Para cancelar todas las explosiones en cualquier momento:
-    function cancelarExplosiones() {
-      fireworks = [];
-    }
-
-    // Si quieres cancelar todas las explosiones al cargar la página:
-    window.addEventListener('DOMContentLoaded', function() {
-      fireworks = [];
-    });
-
-    // Si quieres cancelar todas las explosiones al presionar una tecla, por ejemplo "Escape":
-    document.addEventListener('keydown', function(e) {
-      if (e.key === "Escape") {
-        cancelarExplosiones();
-      }
-    });
-  </script>
-</body>
-</html>
+    
+    
+     
